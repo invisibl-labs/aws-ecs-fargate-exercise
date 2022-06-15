@@ -171,4 +171,29 @@ Created cluster details
 
 <img width="1210" alt="Screenshot 2022-06-15 at 11 00 48 AM" src="https://user-images.githubusercontent.com/104984822/173746556-73ef0f85-0df6-4d26-850c-1b20466d835d.png">
 
+### Create a Task definition
 
+<img width="1422" alt="Screenshot 2022-06-15 at 11 26 42 AM" src="https://user-images.githubusercontent.com/104984822/173754275-d30ea4c1-9e7a-49e0-b0e6-a5ba9a7717e6.png">
+
+Select Fargate from the options
+
+<img width="1152" alt="Screenshot 2022-06-15 at 11 27 11 AM" src="https://user-images.githubusercontent.com/104984822/173754386-f5260648-2ae2-48d9-873a-e484e98afd76.png">
+
+
+Enter Task definition details
+
+<img width="1149" alt="Screenshot 2022-06-15 at 11 34 57 AM" src="https://user-images.githubusercontent.com/104984822/173754348-189f54b5-0e0d-4d9a-9227-2c1a7dee10bd.png">
+
+Enter Task size
+
+<img width="803" alt="Screenshot 2022-06-15 at 11 40 46 AM" src="https://user-images.githubusercontent.com/104984822/173755011-38fc193c-7bfd-46aa-99f9-229a6a647705.png">
+
+### Add Container
+
+<img width="794" alt="Screenshot 2022-06-15 at 11 41 46 AM" src="https://user-images.githubusercontent.com/104984822/173755233-3bd38107-6cf6-443b-abc6-83459811e934.png">
+
+Provide the container service details. Change the image url as per your setup.
+
+<img width="939" alt="Screenshot 2022-06-15 at 12 00 25 PM" src="https://user-images.githubusercontent.com/104984822/173758131-c6a5eddc-0e57-499f-be3e-3974fb78c62f.png">
+
+Leave the rest of the container details to default and hit 'Add'
