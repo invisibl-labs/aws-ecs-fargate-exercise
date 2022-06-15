@@ -90,6 +90,7 @@ Check if you are able to access the app using [http://localhost:5000](http://loc
 
 This requires an account with IAM role having Administrator access.
 
+### Create a repository
 You can create a repository using AWS console or AWS CLI
 
 ### Using AWS console
@@ -115,5 +116,59 @@ After login, create a new repository using the following command.
 ```console
 aws ecr create-repository --repository-name python-flask-app --image-scanning-configuration scanOnPush=false --image-tag-mutability IMMUTABLE --region ap-south-1
 ```
+
+Should see the response in CLI
+<img width="650" alt="Screenshot 2022-06-15 at 8 25 30 AM" src="https://user-images.githubusercontent.com/104984822/173733542-fbd5caac-4acf-41e1-ab36-4a05ac665d23.png">
+
+You can check the AWS console as well.
+
+### Tag and Push the docker image to ECR repository
+
+Tag the image
+```console
+docker tag python-flask-app:1.0 812455318414.dkr.ecr.ap-south-1.amazonaws.com/python-flask-app:1.0
+```
+
+Push the image
+```console
+docker push 812455318414.dkr.ecr.ap-south-1.amazonaws.com/python-flask-app:latest
+```
+
+You can also refer to the "Push Commands" shown by ECR console.
+<img width="747" alt="Screenshot 2022-06-15 at 9 30 36 AM" src="https://user-images.githubusercontent.com/104984822/173734176-36d7eab2-7ed1-494b-adcc-ca302d833cf9.png">
+
+After pushing the docker image, you can view the image in the AWS ECR console.
+
+<img width="1144" alt="Screenshot 2022-06-15 at 9 50 05 AM" src="https://user-images.githubusercontent.com/104984822/173736001-71e53c61-f440-4e3f-83f5-2cd3f2e9457b.png">
+
+## Deploy the image to AWS ECS
+
+AWS ECS (Elastic Container Service) allows easy deployment and management of containers. Schedules the containers to run on the cluster according to the resource needs. Integrates seamlessly with other AWS services like ELB, Security groups, EBS and IAM roles. 
+
+Recommend reading the documentation [AWS ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
+
+### Setup the required IAM role permissions
+
+The container instances in the cluster are managed by agents that use ECS API. The agent services require access to the APIs. Setup the necessary IAM role policies for the same
+
+<img width="1108" alt="Screenshot 2022-06-15 at 10 21 54 AM" src="https://user-images.githubusercontent.com/104984822/173739310-7f22dbb2-f62f-4a8d-9b38-fb15b71aad76.png">
+
+### Setup the ECS cluster
+
+Before running through the next steps, recommend recollecting the main concepts like Cluster, Service, Tasks, Containers. Refer to the documentation [ECS Components](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/welcome-features.html)
+
+For this exercise we will be creating a ECS cluster with Fargate to run the containers. Recommend reading about Fargate to recollect the concepts. [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html)
+
+Create a new cluster. Select the one with AWS Fargate.
+
+<img width="978" alt="Screenshot 2022-06-15 at 10 48 45 AM" src="https://user-images.githubusercontent.com/104984822/173742388-00b13356-bfcf-40f3-894d-c74645b8f0da.png">
+
+Provide a cluster name and create
+
+<img width="982" alt="Screenshot 2022-06-15 at 10 51 32 AM" src="https://user-images.githubusercontent.com/104984822/173746439-714d8e5b-c510-4f28-b23c-5064846dbb5e.png">
+
+Created cluster details
+
+<img width="1210" alt="Screenshot 2022-06-15 at 11 00 48 AM" src="https://user-images.githubusercontent.com/104984822/173746556-73ef0f85-0df6-4d26-850c-1b20466d835d.png">
 
 
