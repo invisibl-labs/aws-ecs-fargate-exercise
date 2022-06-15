@@ -258,6 +258,8 @@ http://<publice IP>:5000
   
 <img width="1180" alt="Screenshot 2022-06-15 at 1 24 22 PM" src="https://user-images.githubusercontent.com/104984822/173773630-f0086fe8-5e89-48db-859d-e1334fdba2a3.png">
 
-
+## Clean up the resources
+  
+#
 
 
