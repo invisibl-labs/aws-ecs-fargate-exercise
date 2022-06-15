@@ -44,7 +44,7 @@ Should see a page like this.
 We need to create a Docker image to run the container on AWS Fargate. A basic knowledge of Docker commands is required for this step. 
 Dockerfile is available in the project root folder. The docker file uses python 3.9.2 base image.
 
-```console
+```code
 FROM python:3.9.2
 
 WORKDIR python-docker
@@ -82,5 +82,5 @@ docker ps
 docker logs <container id>
 ```
 
-Check if you are able to access the app using [Url](http://localhost:5000)
+Check if you are able to access the app using [http://localhost:5000](http://localhost:5000)
 
