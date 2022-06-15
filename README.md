@@ -255,12 +255,12 @@ Open the 'Task' details from the cluster details page and look for public IP und
 Use the public IP to access the python app on browser. If you see the page as shown below, your ECS Fargate setup is complete.
 
 http://<publice IP>:5000
-  
-<img width="1180" alt="Screenshot 2022-06-15 at 1 24 22 PM" src="https://user-images.githubusercontent.com/104984822/173773630-f0086fe8-5e89-48db-859d-e1334fdba2a3.png">
 
-## Don't forget to clean up the resources
+<img width="1180" alt="Screenshot 2022-06-15 at 1 24 22 PM" src="https://user-images.githubusercontent.com/104984822/173773630-f0086fe8-5e89-48db-859d-e1334fdba2a3.png">
   
-## Clean up the repository created in ECR
-## Clean up the ECS cluster
+## Don't forget to clean up the resources
+
+### Clean up the repository created in ECR
+### Clean up the ECS cluster
 
 
