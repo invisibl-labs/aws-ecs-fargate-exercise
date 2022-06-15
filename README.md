@@ -216,14 +216,19 @@ Enter the service details
 
 <img width="1147" alt="Screenshot 2022-06-15 at 1 01 35 PM" src="https://user-images.githubusercontent.com/104984822/173770519-ecbb96f5-25e4-4b18-b728-f9c1ccaf18a0.png">
 
+
 <img width="1096" alt="Screenshot 2022-06-15 at 1 01 49 PM" src="https://user-images.githubusercontent.com/104984822/173770583-72b3916f-340d-4901-9ffd-6196f49ddec6.png">
 
+Use the default deployment strategy - Rolling update 
 <img width="884" alt="Screenshot 2022-06-15 at 1 01 58 PM" src="https://user-images.githubusercontent.com/104984822/173770636-4c22ebbb-1869-43a4-af4e-4bbc2b4ce0f4.png">
 
+Select the default VPC and select Subnets that are configured 
 <img width="1090" alt="Screenshot 2022-06-15 at 1 04 59 PM" src="https://user-images.githubusercontent.com/104984822/173770673-7f9cbff8-88b0-4247-9ac4-cbb1cb49f6eb.png">
 
+Leave the load balancer setting to 'None'
 <img width="869" alt="Screenshot 2022-06-15 at 1 05 10 PM" src="https://user-images.githubusercontent.com/104984822/173770721-e54ad42c-deab-4485-a6d0-2dc9ec64fd3d.png">
 
+Leave the Auto scaling setting to default
 <img width="1099" alt="Screenshot 2022-06-15 at 1 05 26 PM" src="https://user-images.githubusercontent.com/104984822/173770766-e00f32d3-5e95-4c29-83d9-fbc67e73108f.png">
 
 Once the service is created, you can see the Service and Tasks created under the respective tabs in the cluster details.
