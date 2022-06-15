@@ -1,4 +1,4 @@
-# Exercise for AWS ECS - Fargate with Docker images
+# Exercise for AWS ECS - Fargate with Docker images - Beginner's step by step guide.
 
 In this exercise you will be building a simple python flask Docker image, store it in AWS ECR(Container Regsitry) and run the container in Fargate managed by AWS ECS. 
 
@@ -188,7 +188,7 @@ Enter Task size
 
 <img width="803" alt="Screenshot 2022-06-15 at 11 40 46 AM" src="https://user-images.githubusercontent.com/104984822/173755011-38fc193c-7bfd-46aa-99f9-229a6a647705.png">
 
-### Add Container
+#### Add Container
 
 <img width="794" alt="Screenshot 2022-06-15 at 11 41 46 AM" src="https://user-images.githubusercontent.com/104984822/173755233-3bd38107-6cf6-443b-abc6-83459811e934.png">
 
@@ -196,4 +196,68 @@ Provide the container service details. Change the image url as per your setup.
 
 <img width="939" alt="Screenshot 2022-06-15 at 12 00 25 PM" src="https://user-images.githubusercontent.com/104984822/173758131-c6a5eddc-0e57-499f-be3e-3974fb78c62f.png">
 
-Leave the rest of the container details to default and hit 'Add'
+Leave the rest of the container details to default and hit 'Add'. Should see the container created. 
+
+Leave the rest of the Task definition fields and hit 'Create'. Should create Exceution role, Task definition and CloudWatch log group.
+
+<img width="1411" alt="Screenshot 2022-06-15 at 12 05 32 PM" src="https://user-images.githubusercontent.com/104984822/173758822-cc099559-f8a0-4977-8d4d-9ab869d3027b.png">
+
+View the Task defintion details
+
+<img width="1211" alt="Screenshot 2022-06-15 at 12 10 44 PM" src="https://user-images.githubusercontent.com/104984822/173759748-e3b5a3a7-3045-4607-9b9b-45177900091f.png">
+
+### Create a Service
+
+Once the Task definition and Container are configured, we are ready to create a service.
+
+Navigate to the 'python-app' cluster details page and hit 'Create' under the 'Service' tab.
+
+Enter the service details
+
+<img width="1147" alt="Screenshot 2022-06-15 at 1 01 35 PM" src="https://user-images.githubusercontent.com/104984822/173770519-ecbb96f5-25e4-4b18-b728-f9c1ccaf18a0.png">
+
+<img width="1096" alt="Screenshot 2022-06-15 at 1 01 49 PM" src="https://user-images.githubusercontent.com/104984822/173770583-72b3916f-340d-4901-9ffd-6196f49ddec6.png">
+
+<img width="884" alt="Screenshot 2022-06-15 at 1 01 58 PM" src="https://user-images.githubusercontent.com/104984822/173770636-4c22ebbb-1869-43a4-af4e-4bbc2b4ce0f4.png">
+
+<img width="1090" alt="Screenshot 2022-06-15 at 1 04 59 PM" src="https://user-images.githubusercontent.com/104984822/173770673-7f9cbff8-88b0-4247-9ac4-cbb1cb49f6eb.png">
+
+<img width="869" alt="Screenshot 2022-06-15 at 1 05 10 PM" src="https://user-images.githubusercontent.com/104984822/173770721-e54ad42c-deab-4485-a6d0-2dc9ec64fd3d.png">
+
+<img width="1099" alt="Screenshot 2022-06-15 at 1 05 26 PM" src="https://user-images.githubusercontent.com/104984822/173770766-e00f32d3-5e95-4c29-83d9-fbc67e73108f.png">
+
+Once the service is created, you can see the Service and Tasks created under the respective tabs in the cluster details.
+
+<img width="1414" alt="Screenshot 2022-06-15 at 1 06 14 PM" src="https://user-images.githubusercontent.com/104984822/173770899-ad21dd01-015b-4d07-b862-95878ee80e6e.png">
+
+You can see the 'Task' is in running state.
+
+<img width="1399" alt="Screenshot 2022-06-15 at 1 11 30 PM" src="https://user-images.githubusercontent.com/104984822/173771018-d4adf125-9982-4a01-9129-e8912065e28e.png">
+
+### Updating the Security Groups
+
+Navigate to the python-service details page and click on the security groups link to open the security groups page.
+
+<img width="1402" alt="Screenshot 2022-06-15 at 1 17 21 PM" src="https://user-images.githubusercontent.com/104984822/173772390-14739ba0-efc5-424f-951c-9004cdf65bb3.png">
+
+Add an inbound rule to allow port 5000 to allow access to the python app.
+
+<img width="1347" alt="Screenshot 2022-06-15 at 1 20 05 PM" src="https://user-images.githubusercontent.com/104984822/173772665-8572df16-2f16-4449-9d3b-308e74419b41.png">
+
+### Access the python app
+
+We need the public IP to access the app as we have not setup the load balancer.
+
+Open the 'Task' details from the cluster details page and look for public IP under the Network section.
+
+<img width="811" alt="Screenshot 2022-06-15 at 1 13 57 PM" src="https://user-images.githubusercontent.com/104984822/173772968-66039f65-ecbe-4a56-b2a7-91e1b0b9bc8c.png">
+
+Use the public IP to access the python app on browser. If you see the page as shown below, your ECS Fargate setup is complete.
+
+http://<publice IP>:5000
+  
+<img width="1180" alt="Screenshot 2022-06-15 at 1 24 22 PM" src="https://user-images.githubusercontent.com/104984822/173773630-f0086fe8-5e89-48db-859d-e1334fdba2a3.png">
+
+
+
+
