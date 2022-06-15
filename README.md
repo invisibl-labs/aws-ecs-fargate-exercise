@@ -64,7 +64,7 @@ Run the following docker commands to build and check the images.
 docker build -t python-flask-app:1.0 .
 // check images
 docker images
-
+```
 Should see the python-flask-app image in the list.
 
 ## Run the Docker Image
